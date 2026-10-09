@@ -28,6 +28,10 @@ set). Without that variable `CRAFT_FONTS` is empty and everything below copes:
 - `document_japanese_font` / `japanese_glyph`: the face (Shippori Mincho, then BIZ UDMincho) whose
   outlines become the Type 3 fallback font for Japanese text written into PDFs. Without it,
   `japanese_glyph` returns `GlyphError::NoFont` and the editor reports a clear error.
+- `document_arabic_font` / `shape_arabic` / `arabic_glyph`: the first `Arab` face, shaped with
+  harfrust (joining forms, ligatures, mark positions) into clusters for Arabic text written into
+  PDFs; the editor draws each cluster as one Type 3 glyph with a ToUnicode entry. Without the face
+  they return `GlyphError::NoFont` and the editor reports a clear error.
 - `SHIPPORI_MINCHO`: Shippori Mincho's bytes, or `None`.
 
 Generated Japanese Type 3 fonts record the fallback face's family and style in an indirect
