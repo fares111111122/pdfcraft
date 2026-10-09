@@ -37,6 +37,9 @@ set). Without that variable `CRAFT_FONTS` is empty and everything below copes:
   harfrust (joining forms, ligatures, mark positions) into clusters for Arabic text written into
   PDFs; the editor draws each cluster as one Type 3 glyph with a ToUnicode entry. Without the face
   they return `GlyphError::NoFont` and the editor reports a clear error.
+- `document_japanese_fonts_for_style`: every `Jpan` face in that order of preference, so the
+  editor can use the first one that has all of the replacement's glyphs (the faces differ in
+  coverage, e.g. of Cyrillic).
 - `SHIPPORI_MINCHO`: Shippori Mincho's bytes, or `None`.
 
 Generated Japanese Type 3 fonts record the fallback face's family and style in an indirect
